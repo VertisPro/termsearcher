@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <title>Widget Works</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Lato|Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="semantic/semantic.min.css"/>
+  <script type="text/javascript" src="semantic/semantic.min.js"></script>
+  <script type="text/javascript">
+      jQuery(document).ready(function($) {
+          $(".clickable-row").click(function() {
+              window.document.location = $(this).data('url');
+          });
+      });
+  </script>
+  <style type="text/css">
+    .clickable-row {
+     cursor: pointer; 
+   } 
+  </style>
+
+ </head>
+<body>
+<div class="ui grid container">
+<div class="sixteen wide column">
+<h3> </h3>
+</div>
+<div class="sixteen wide orange column">
+<h3><i class="large setting loading icon"></i> Widget Works</h3>
+</div>
+<div class="sixteen wide column">
+  <div class="ui selectable items">
+  <div class="item clickable-row" data-url='sctsearchwdgt.html'>
+    <div class="ui large image">
+      <img src="/images/gifs/sct_srch_01.gif">
+    </div>
+    <div class="content">
+      <div class="header">Search Widget - Prototype</div>
+      <div class="meta"><a>SNOMED CT</a></div>
+      <div class="description">
+        <p>Provides a google-like <b>autocomplete</b> search widget based on the Problem Diagnosis refset.</p>
+        <p>Largely based on guidance provided by the <a href="http://ihtsdo.org/collab/doc10211" >IHTSDO SNOMED CT Search and Data Entry Guide</a>. It provides a term search based on:
+            <ul class="ui list">
+            <li>Words entered in any order</li>
+            <li>Phrase Match</li>
+            <li>Identical Term</li>
+            <li>Starts with</li>
+            <li>Ends with</li>
+            </ul>
+       </p>
+       <p>It also provides commands to operate on the input term, a tactic that is very useful to reduce the number of results.</p>
+       <p>This tool was built from simple open source tools and aims to to demonsrate a widget prototype that can hopefully be developed for SNOMED data entry.</p>
+       <p>Another feature (under development) is the ability to spell check within the SCT terms domain allowing spelling assistance for difficult terms.</p>
+       <p>Compatibility:</p>
+       <p><i class="html5 orange icon"></i> <i class="css3 blue icon"></i>Works across desktop and mobile browsers</p>
+       <p><i class="red warning sign icon"></i>Beta</p>
+
+      </div>
+    <div class="extra">
+      <span><i class="calendar outline icon"></i>July 2014</span>
+    </div>
+    </div>
+
+  </div>
+  </div>
+</div>
+<!--
+<div class="sixteen wide column">
+
+    <table class="ui selectable celled padded table">
+    <thead><tr>
+    <th>Widget</th>
+    <th>Description</th>
+    </tr></thead>
+      <tbody>
+      <tr class='clickable-row' data-url='sctsearchwdgt.html'>
+        <td class="single line">
+          <h4 class="ui image header">
+            <img src="images/thumbnails/drop_down.png" class="ui mini rounded image">
+            <div class="content">Search Widget
+              <div class="sub header">SNOMED CT</div>
+            </div>
+          </h4>
+        </td>
+        <td>Provides a configurable autocomplete search based on the Problem Diagnosis refset.
+  The selected code can be copied to the clipboard for easy insertion into clinical documents.
+        </td>
+      </tr>
+      <tr class='clickable-row' data-url='url://'>
+        <td class="single line">
+          <h4 class="ui image header">
+            <img src="images/thumbnails/lab.png" class="ui mini rounded image">
+            <div class="content">Lab Browser
+              <div class="sub header">LOINC</div>
+            </div>
+          </h4>
+        </td>
+        <td>
+            <a class="ui grey ribbon label">Coming Soon</a>
+            <p>
+            A searchable browser for LOINC and local terms demonstrating how locally mapped terms can be displayed.</p>
+        </td>
+      </tr>      
+      </tbody>
+    </table>
+</div>
+-->
+
+
+
+
+
+  </div>
+ </body>
+ </html>
+

@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+  <meta charset="utf-8"/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+  <title>Search Widget - LOINC</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <script type="text/javascript" src="js/jquery.min.js"></script>
+  <link href='http://fonts.googleapis.com/css?family=Lato|Roboto' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="semantic/semantic.min.css"/>
+  <script type="text/javascript" src="semantic/semantic.min.js"></script>
+  <script type="text/javascript">
+	var paramsearchtype = "wordsanyorder";
+	
+	function setsearchparams(){
+		$('.ui.search').search({
+		apiSettings: {url: '/loinc/searchterm?q={query}&st=' + paramsearchtype, cache: false, searchFullText: false},
+		type: 'category',
+		cache: false,
+		searchFullText: false,
+		});
+	}
+
+  function toggleSidebar(){
+          // showing multiple
+      $('.ui.sidebar')
+        .sidebar('setting', 'transition', 'push')
+        .sidebar('toggle')
+      ;
+  }
+
+
+  jQuery(document).ready(function($) {
+
+		// using context
+		$('.context.example .ui.sidebar')
+		.sidebar({context: $('.context.example ')}).sidebar('attach events', '.context.example .menu .item');
+
+
+  		// init dropdown
+		$(searchtype).dropdown({
+			onChange: function(value, text, $selectedItem) {
+			paramsearchtype = value;
+			console.log(paramsearchtype);
+			setsearchparams();
+			}
+		});
+
+		paramsearchtype = $(searchtype).dropdown('get value');
+		setsearchparams();
+
+  	});
+  </script>
+  <style type="text/css">
+
+  </style>
+</head>
+<body>
+<div class="ui vertical sidebar menu">
+  <a class="item" href="index.html"><i class="home icon"></i>Home</a>
+</div>
+<div class="pusher">
+<div class="ui container masthead vertical segment">
+	<div class="ui attached stackable menu">
+	  <div class="ui container">
+	    <a class="item" onclick="toggleSidebar()">
+	      <i class="sidebar icon"></i>
+	    </a>
+		<div class="header item">Search Widget - LOINC</div>	    
+	  </div>
+	</div>
+ 	<div class="ui large header">	</div>
+	<div class="ui form">
+    <p>Prototype that provides a configurable autocomplete search based on the LOINC release. The results are typically displayed within 1 second. The entire system is running on a standard laptop and is capable of serving 500+ requests per second.</p>
+	<div class="ui divider"></div>
+	<div class="two fields">
+		<div class="three wide field">
+			<label>Search type</label>
+			<div class="ui selection dropdown" id="searchtype">
+			 <input name="searchtype" type="hidden" value="wordsanyorder">
+			    <i class="dropdown icon"></i>
+			    <div class="default text" >Search type</div>
+			    <div class="menu">
+			      <div class="item"  data-value="wordsanyorder">Words - any order</div>
+			      <div class="item"  data-value="phrasematch">Phrase match</div>
+			      <div class="item"  data-value="identicalterm">Identical Term</div>
+			      <div class="item"  data-value="startswith">Starts with</div>
+			      <div class="item"  data-value="endswith">Ends with</div>										      
+			    </div>
+			 </div>	
+		</div>
+		<div class="thirteen wide field">
+			<label>Search box</label>
+			<div class="ui fluid category search">
+				<div class="ui fluid icon input">
+				  <input class="prompt" type="text" placeholder="Enter Text">
+				  <i class="search icon"></i>
+				</div>
+				<div class="results"></div>
+			</div>
+		</div>
+	</div>
+
+
+	<div class="two fields">
+		<div class="three wide field">
+				<div class="ui card">
+				  <div class="content">
+					<div class="ui relaxed divided list">
+						<div class="item" >
+							<div class="content">
+							  <a class="header">Wildcards</a>
+							  <div class="description">Use a wildcard (*) to search around a term (e.g. diab* foot)</div>
+							</div>
+						</div>
+						<div class="item" >
+							<div class="content">
+							  <a class="header">Exclude Terms</a>
+							  <div class="description">Use a minus (-) to exclude a term (e.g. -mellitus)</div>
+							</div>
+						</div>
+						<div class="item" >
+							<div class="content">
+							  <a class="header">Include Terms</a>
+							  <div class="description">Use a plus (+) to include a term (e.g. +mellitus)</div>
+							</div>
+						</div>
+						<div class="item" >
+							<div class="content">
+							  <a class="header">Exact Match</a>
+							  <div class="description">Enclose a term between quotes for an exact match (e.g. &quot;Diabetes Mellitus&quot;)</div>
+							</div>
+						</div>					
+						<div class="item">
+						<p>Upcoming:</p>
+						<p><a class="ui blue label">Spell Check</a></p>
+						<p><a class="ui purple label">Filter by Semtantic type </a></p>
+						</div>
+					</div>
+				  </div>
+				  <div class="extra content">
+				    <a>
+				      <i class="red warning sign icon"></i>
+				      Beta
+				    </a>
+				  </div>
+				</div>
+		</div>
+		<div class="thirteen wide field">
+		</div>		
+	</div>
+
+
+
+	</div>
+</div>
+</div>
+
+</body>
+</html>
