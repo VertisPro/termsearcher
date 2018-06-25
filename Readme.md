@@ -1,5 +1,5 @@
 # termsearcher
-## Searching for right term in a clinical setting
+### Searching for right term in a clinical setting
 
 This project is a quick hack to showcase a method for searching the right term in a healthcare codeset, subset or terminology. 
 
@@ -11,7 +11,7 @@ It provides often missed features in clinical term search interfaces like:
 
 The intention is to help start a conversation around how a clinical documentation system can be integrated with a search system.
 
-Here is what it looks like:
+### Here is what it looks like:
 
 ![alt text][logo]
 
