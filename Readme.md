@@ -15,7 +15,7 @@ The intention is to help start a conversation around how a clinical documentatio
 
 ![alt text][logo]
 
-It was build using Go and python and can be scaled to serve 50+ users on a single instance.
+It was built using Go and python and can be scaled to serve 50+ users on a single instance.
 
 Please note that this code is not production ready.
 
