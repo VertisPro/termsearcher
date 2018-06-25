@@ -11,7 +11,7 @@ It provides often missed features in clinical term search interfaces like:
 The intention is to help start a conversation around how a clinical documentation system can be integrated with a search system.
 
 Here is what it looks like:
-####Screenshot
+
 ![alt text][logo]
 
 It was build using Go and python and can be scaled to serve 50+ users on a single instance.
